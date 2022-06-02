@@ -1,0 +1,8 @@
+{
+  "name": "typescript-study",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  },
+  "workspaces": ["packages/*"]
+}
