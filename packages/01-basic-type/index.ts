@@ -32,8 +32,8 @@ let bb4: number
 /**
  * 4. void
  */
-let a4: void = null
-a4 = undefined
+let a4: void = undefined
+// a4 = null
 // a4 = 1  // ❌
 
 /**
@@ -43,3 +43,54 @@ function error(message: string): number {
   throw new Error(message);
 }
 // error('error')
+
+/**
+ * 6. tuple
+ */
+let a6: [number, string]
+a6 = [1, '1']
+// a6 = [1, '1', 1] // ❌
+
+
+/**
+ * enum
+ */
+ enum Color1 {
+  Red,
+  Green,
+  Blue,
+}
+let c1: Color1 = Color1.Green;
+console.log('c1', c1) // 输出为 1
+
+// 支持赋值
+enum Color2 {
+  Red = 1,
+  Green,
+  Blue,
+}
+let c2: Color2 = Color2.Green;
+console.log('c2', c2) // 输出为 2
+
+enum Color3 {
+  Red,
+  Green = 3,
+  Blue,
+}
+let c3: Color3 = Color3.Blue;
+console.log('c3', c3) // 输出为 4
+
+enum Color4 {
+  Red = 1,
+  Green = 2,
+  Blue = 4,
+}
+let c4: Color4 = Color4.Green;
+console.log('c4', c4) // 输出为 2
+
+/**
+ * 类型断言
+ */
+ let someValue: unknown = "this is a string";
+//  let strLength: number = (someValue as string).length;
+ let strLength: number = (<string>someValue).length;

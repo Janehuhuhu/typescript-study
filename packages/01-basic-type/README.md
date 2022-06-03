@@ -1,14 +1,14 @@
 ## **TypeScript中的基本类型**
 
-TypeScript中的基本类型：
+`TypeScript` 中的基本类型：
 
 - 类型声明
 
-  - 类型声明是TS非常重要的一个特点；
+  - 类型声明是 `TS` 非常重要的一个特点；
 
-  - 通过类型声明可以指定TS中变量（参数、形参）的类型；
+  - 通过类型声明可以指定 `TS` 中变量（参数、形参）的类型；
 
-  - 指定类型后，当为变量赋值时，TS编译器会自动检查值是否符合类型声明，符合则赋值，否则报错；
+  - 指定类型后，当为变量赋值时，`TS` 编译器会自动检查值是否符合类型声明，符合则赋值，否则报错；
 
   - 简而言之，类型声明给变量设置了类型，使得变量只能存储某种类型的值；
 
@@ -26,8 +26,8 @@ TypeScript中的基本类型：
 
 - 自动类型判断
 
-  - TS拥有自动的类型判断机制
-  - 当对变量的声明和赋值是同时进行的，TS编译器会自动判断变量的类型
+  - `TS` 拥有自动的类型判断机制
+  - 当对变量的声明和赋值是同时进行的，`TS` 编译器会自动判断变量的类型
   - 所以如果你的变量的声明和赋值时同时进行的，可以省略掉类型声明
 
 - 类型：
@@ -44,7 +44,7 @@ TypeScript中的基本类型：
   |  never   |      没有值       |          不能是任何值          |
   |  object  |  {name:'孙悟空'}  |          任意的JS对象          |
   |  array   |      [1,2,3]      |           任意JS数组           |
-  |  tuple   |       [4,5]       | 元素，TS新增类型，固定长度数组 |
+  |  tuple   |       [4,5]       | 元组，TS新增类型，固定长度数组 |
   |   enum   |    enum{A, B}     |       枚举，TS中新增类型       |
 
 - number
@@ -110,15 +110,16 @@ TypeScript中的基本类型：
 
 - void
 
-  - `undefined` 或 `null`, 赋值为 *null* 或 `undefined` 的自动类型判断为 `any`
+  - `undefined` 或 `null`, 赋值为 `undefined` 的自动类型判断为 `any`。但是 `null` 不可以赋值给 `void`, 报错 *Type 'null' is not assignable to type 'void'*。没有返回值的函数，其返回值类型为 `void`。[详情参考](https://juejin.cn/post/6844904126019534861)
 
   - ```typescript
     let a4: void = undefined
-    a4 = null
+    // a4 = null // ❌
     // a4 = 1  // ❌
     ```
 
 - never
+  - 不能是任何值, `undefined` 都不行，一般是报错了
 
   - ```typescript
     function error(message: string): never {
@@ -140,6 +141,7 @@ TypeScript中的基本类型：
     ```
 
 - tuple
+  - 元组，`TS` 新增类型，固定长度数组
 
   - ```typescript
     let x: [string, number];
@@ -147,33 +149,46 @@ TypeScript中的基本类型：
     ```
 
 - enum
+  - 适合枚举值的赋值场景，默认从 0 开始，也可以直接赋值，如果只赋值一部分，后面的值会依次累加
 
   - ```typescript
-    enum Color {
-      Red,
-      Green,
-      Blue,
-    }
-    let c: Color = Color.Green;
-    
-    enum Color {
-      Red = 1,
-      Green,
-      Blue,
-    }
-    let c: Color = Color.Green;
-    
-    enum Color {
-      Red = 1,
-      Green = 2,
-      Blue = 4,
-    }
-    let c: Color = Color.Green;
+     enum Color1 {
+        Red,
+        Green,
+        Blue,
+      }
+      let c1: Color1 = Color1.Green;
+      console.log('c1', c1) // 输出为 1
+
+      // 支持赋值
+      enum Color2 {
+        Red = 1,
+        Green,
+        Blue,
+      }
+      let c2: Color2 = Color2.Green;
+      console.log('c2', c2) // 输出为 2
+
+      enum Color3 {
+        Red,
+        Green = 3,
+        Blue,
+      }
+      let c3: Color3 = Color3.Blue;
+      console.log('c3', c3) // 输出为 4
+
+      enum Color4 {
+        Red = 1,
+        Green = 2,
+        Blue = 4,
+      }
+      let c4: Color4 = Color4.Green;
+      console.log('c4', c4) // 输出为 2
     ```
 
 - 类型断言
 
-  - 有些情况下，变量的类型对于我们来说是很明确，但是TS编译器却并不清楚，此时，可以通过类型断言来告诉编译器变量的类型，断言有两种形式：
+  - 有些情况下，变量的类型对于我们来说是很明确，但是 `TS` 编译器却并不清楚，此时，可以通过类型断言来告诉编译器变量的类型，断言有两种形式：
 
     - 第一种
 
