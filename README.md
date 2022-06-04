@@ -11,3 +11,7 @@
 
 - [01-ts基本类型](./packages/01-basic-type/README.md)
 - [02-面向对象](./packages/02-object/README.md)
+- [03-接口](./packages/03-interface/README.md)
+- [04-泛型](./packages/03-interface/README.md)
+
+
