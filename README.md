@@ -10,3 +10,4 @@
 ### 学习笔记
 
 - [01-ts基本类型](./packages/01-basic-type/README.md)
+- [02-面向对象](./packages/02-object/README.md)
