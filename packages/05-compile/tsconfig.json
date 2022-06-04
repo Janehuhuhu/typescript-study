@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    // "noImplicitAny": true
+    // "noImplicitThis": true
+  },
+  "include": ["src/**/*"]
+}
