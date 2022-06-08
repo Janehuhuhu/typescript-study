@@ -252,6 +252,22 @@ npm install -g typescript
 
     - 初次编译后生成存储编译信息文件，二次编译可增量编译，提升编译速度
 
+  - paths 和 baseUrl
+
+    -  `baseUrl` 用来描述计算相对路径时的根目录， `paths` 用来描述路径别名
+    - ```js
+      {
+        "compilerOptions": {
+          "baseUrl": "./",
+          "paths": {
+            "*": ["types/*"]
+          } 
+        }
+      }
+      ```
+    - 应用场景：导入第三方包时，自己需要定义声明文件，用此方法定义声明文件的寻址路径，如通过 `import` 导入 `foo` 的时候，也会去 `types` 目录下寻找对应的模块的声明文件了, [详见](https://ts.xcatliu.com/basics/declaration-files.html)
+
+
 - 严格检查
 
   - strict
