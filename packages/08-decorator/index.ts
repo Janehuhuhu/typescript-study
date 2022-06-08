@@ -31,7 +31,7 @@ class B {
   }
 }
 
-@decorateMethod
+// @decorateMethod  // ❌ 不可
 function sayHello() {
   console.log('hello =====>')
 }

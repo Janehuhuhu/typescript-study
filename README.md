@@ -21,8 +21,13 @@
 
 todo:
 - ts 实践（类型体操）
+- baseurl 配置和paths
+- fork-ts-type-build-webpack-plugin
+- 常用插件，babel中用于ts解析
 
 https://github.com/JasonkayZK/typescript-learn
+
+https://juejin.cn/post/7091655236938366989
 
 
 

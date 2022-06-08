@@ -20,11 +20,19 @@ npm install -g typescript
 
 ### 自动编译整个项目
 
-如果直接使用 `tsc` 指令，则可以自动将当前项目下的所有 `ts`文件编译为 `js` 文件。
+- 如果直接使用 `tsc` 指令，则可以自动将当前项目下的所有 `ts`文件编译为 `js` 文件。
 
-**但是能直接使用 tsc 命令(tsc)的前提时，要先在项目根目录下创建一个 ts 的配置文件 tsconfig.json**
+- **但是能直接使用 tsc 命令(tsc)的前提时，要先在项目根目录下创建一个 ts 的配置文件 tsconfig.json**
 
-`tsconfig.json` 是一个 `JSON` 文件，添加配置文件后，只需只需 `tsc` 命令即可完成对整个项目的编译
+- `tsconfig.json` 是一个 `JSON` 文件，添加配置文件后，只需只需 `tsc` 命令即可完成对整个项目的编译
+
+- 配置查找
+  - 默认 `tsc` 时，编译器会从当前目录开始去查找 `tsconfig.json` 文件，逐级向上搜索父目录
+  - 支持命令行参数 `--project`（或-p）指定一个包含 `tsconfig.json` 文件的目录
+
+<br>
+
+
 
 配置选项：
 
@@ -64,7 +72,9 @@ npm install -g typescript
 "extends": "./configs/base"
 ```
 
-上述示例中，当前配置文件中会自动包含 `config` 目录下 `base.json` 中的所有配置信息
+上述示例中，当前配置文件中会自动包含 `config` 目录下 `base.json` 中的所有配置信息。
+
+无法继承的一些配置（过往经验）： `baseUrl` 、 `include` 、 `exclude`
 
 #### **files**
 
