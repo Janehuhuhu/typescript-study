@@ -77,6 +77,37 @@ module.exports = {
 }
  ```
 
+ 实际使用时 `ts-loader` 一般主要用于转译，而 `​fork-ts-type-build-webpack-plugin` 主要负责在 `webpack` 通过独立进程进行类型校验。
+ 
+ 因为 `ts-loader` 本身进行转译 + 类型校验賊慢，很难受。一般社区工具都是 `ts-loader + fork-ts-type-build-webpack-plugin`
+ ```js
+ var ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+ 
+var webpackConfig = {
+  context: __dirname,
+  entry: './src/index.ts',
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        options: {
+          // disable type checker - we will use it in fork plugin
+          transpileOnly: true 
+        }
+      }
+    ]
+  },
+  plugins: [
+    new ForkTsCheckerWebpackPlugin()
+  ]
+}
+ ```
+
+
+
+
+
 #### 配置TS编译选项
 
 根目录下创建 `tsconfig.json`，配置可以根据自己需要
@@ -90,3 +121,26 @@ module.exports = {
     }
 }
  ```
+
+
+ ### ts 常用插件
+ - 如果需要使用可选链(?.、??)，则需要在 `babel` 配置文件中配置
+    ```js
+    module.exports = {
+    plugins: [
+        '@babel/plugin-proposal-optional-chaining',
+    ],
+    }
+    ```
+
+ - 如果 `class` 类写属性声明时一直报错，需在 `babel` 配置文件中配置
+
+ ```js
+ module.exports = {
+  plugins: [
+    '@babel/plugin-proposal-class-properties',
+  ],
+}
+ ```
+
+
