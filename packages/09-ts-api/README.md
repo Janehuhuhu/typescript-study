@@ -161,8 +161,4 @@ compile(files, compilerOptions)
 ```
 
 
-### 
-
-
-
-https://juejin.cn/post/7042498660977868814
+[TypeScript编译器API使用指南](https://juejin.cn/post/7042498660977868814)
