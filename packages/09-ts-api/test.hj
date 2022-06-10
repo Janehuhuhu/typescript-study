@@ -1,0 +1,4 @@
+@world
+let x: string  = 'hello '
+
+console.log(x + world)

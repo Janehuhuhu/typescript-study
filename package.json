@@ -2,6 +2,7 @@
   "name": "typescript-study",
   "private": true,
   "devDependencies": {
+    "@types/node": "^17.0.41",
     "lerna": "^4.0.0"
   },
   "workspaces": [
