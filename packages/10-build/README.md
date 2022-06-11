@@ -78,7 +78,7 @@
 <br>
 
 ## 实践 - 运行中 ts 解析
-在读取 `ts` 文件之前加载该段代码
+一般用于在运行中加载 `ts` 文件，如按需加载的情况
 ```js
 // compiler.js
 const { register } = require('ts-node')
