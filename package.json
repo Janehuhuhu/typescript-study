@@ -2,13 +2,20 @@
   "name": "typescript-study",
   "private": true,
   "devDependencies": {
+    "@swc/core": "^1.2.197",
     "@types/node": "^17.0.41",
-    "lerna": "^4.0.0"
+    "lerna": "^4.0.0",
+    "ts-loader": "^9.3.0",
+    "tsup": "^6.1.2",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.9.2"
   },
   "workspaces": [
     "packages/*"
   ],
   "dependencies": {
+    "esbuild": "^0.14.43",
+    "perf_hooks": "^0.0.1",
     "typescript": "^4.7.3"
   }
 }

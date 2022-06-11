@@ -162,3 +162,4 @@ compile(files, compilerOptions)
 
 
 [TypeScript编译器API使用指南](https://juejin.cn/post/7042498660977868814)
+[Compiler API](https://github.com/microsoft/TypeScript/wiki/Using-the-Compiler-API#creating-and-printing-a-typescript-ast)

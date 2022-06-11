@@ -19,6 +19,7 @@
 - [07-声明文件](./packages/07-declare/README.md)
 - [08-装饰器](./packages/08-decorator/README.md)
 - [09-ts常用api](./packages/09-ts-api/README.md)
+- [10-构建编译](./packages/10-build/README.md)
 
 todo:
 - ts 实践（类型体操）
