@@ -68,10 +68,35 @@
 
 - SWC
   - [swc-project](https://github.com/swc-project/swc)
-  - Run TypeScript with node, [swc-node](https://github.com/Brooooooklyn/swc-node)
+  - Run TypeScript with node, 且可用于加速 `jest` 运行, [swc-node](https://github.com/Brooooooklyn/swc-node)
 
 - esbuild
   - [esbuild](https://github.com/evanw/esbuild)
   - [rollup-plugin-esbuild](https://github.com/egoist/rollup-plugin-esbuild)
   - [在webpack中使用esbuild去构建 ts](https://github.com/privatenumber/esbuild-loader)
 
+<br>
+
+## 实践 - 运行中 ts 解析
+在读取 `ts` 文件之前加载该段代码
+```js
+// compiler.js
+const { register } = require('ts-node')
+const compilerOptions = {
+  module: 'commonjs',
+  target: 'es5',
+  lib: [
+    // 接收的语法规范范围
+    'es5',
+    'esnext',
+    'dom',
+  ],
+}
+register({ compilerOptions })
+```
+
+```js
+require('./compiler')
+const demoRes = require('./demo.ts')
+demoRes.callMe()
+```
