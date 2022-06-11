@@ -21,14 +21,10 @@
 - [09-ts常用api](./packages/09-ts-api/README.md)
 - [10-构建编译](./packages/10-build/README.md)
 
-todo:
-- ts 实践（类型体操）
+<br>
 
-https://github.com/JasonkayZK/typescript-learn
-
-https://juejin.cn/post/7091655236938366989
-
-https://juejin.cn/post/7042498660977868814
+### 学习参考
+- [typescript-learn](https://github.com/JasonkayZK/typescript-learn)
 
 
 
