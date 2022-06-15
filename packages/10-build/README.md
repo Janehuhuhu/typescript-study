@@ -18,6 +18,7 @@
 
 ## swc 和 esbuild
 - [ESBuild & SWC浅谈: 新一代构建工具](https://juejin.cn/post/7091655236938366989)
+- [Esbuild 为什么那么快](https://zhuanlan.zhihu.com/p/379164359)
 
 - 要点：
   - `ESBuild` 是基于 `Go` 语言开发的 `JavaScript Bundler`, 由 `Figma` 前 `CTO Evan Wallace` 开发, 并且也被 `Vite` 用于开发环境的依赖解析和 `Transform`.
